@@ -1,0 +1,32 @@
+---
+import Container from "@/components/container.astro";
+import Cta from "@/components/cta.astro";
+import Features from "@/components/features.astro";
+import Hero from "@/components/hero.astro";
+import Logos from "@/components/logos.astro";
+import Layout from "@/layouts/Layout.astro";
+
+const components = {
+  hero: Hero,
+  features: Features,
+  logos: Logos,
+  cta: Cta
+}
+
+---
+
+<Layout title="">
+  <script>
+    if(window.inEditorMode){
+      import("@/utils/live-editing.js");
+    }
+  </script>
+  <Container>
+    <editable-array data-prop="content_blocks" data-id-key="type" data-component-key="type">
+      {Astro.props.frontmatter.content_blocks.map((block) => {
+        const Component = components[block.type];
+        return <editable-array-item data-id={block.type} data-component={block.type}><Component {...block} /></editable-array-item>;
+      })}
+    </editable-array>
+  </Container>
+</Layout>
