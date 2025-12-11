@@ -4,6 +4,8 @@ paths:
 collections_config:
   pages:
     path: src/pages
+    glob:
+      - '!/blog/*'
     icon: wysiwyg
     url: /[full_slug]/
     disable_url: false
