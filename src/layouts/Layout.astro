@@ -1,5 +1,6 @@
 ---
 import { SEO } from "astro-seo";
+import { ClientRouter } from "astro:transitions";
 import Footer from "@/components/footer.astro";
 import Navbar from "@/components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
@@ -54,6 +55,7 @@ const makeTitle = title
         },
       }}
     />
+    <ClientRouter />
   </head>
   <body>
     <Navbar />
