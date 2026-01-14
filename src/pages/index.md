@@ -21,7 +21,7 @@ content_blocks:
       - title: Item 2 
         desc: Another lil description
   - type: grid
-    title: Hello card grid
+    title: Hello card grid. This has an editable array nested, with no nested editables inside each array item.
     cards:
       - title: Card 1
         content: Wassssup
@@ -31,6 +31,15 @@ content_blocks:
         content: Wassssup3
   - type: grid2
     title: Hello card grid2. This has no editable array nested.
+    cards:
+      - title: Card 1
+        content: Wassssup
+      - title: Card 2
+        content: Wassssup2
+      - title: Card 3
+        content: Wassssup3
+  - type: grid3
+    title: Hello card grid3. This has an editable array nested. It has one nested editable inside each array item.
     cards:
       - title: Card 1
         content: Wassssup
