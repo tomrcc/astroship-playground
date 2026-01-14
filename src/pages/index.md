@@ -12,6 +12,9 @@ content_blocks:
   - type: features
   - type: logos
   - type: cta
+    background_color: "#034ad8"
+    title: This is CTA
+    text_color: "#ff0000"
   - type: grid
     title: Hello card grid
     cards:
