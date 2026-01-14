@@ -3,7 +3,14 @@ import { Picture } from "astro:assets";
 import Link from "@/components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/**/*.{jpeg,jpg,png,gif,svg,webp,avif}",
+  { eager: true },
+);
+
 const { heading, content, color, image } = Astro.props;
+
+const imageSrc = allImages[image]?.default ?? image;
 ---
 
 <section
@@ -11,7 +18,7 @@ const { heading, content, color, image } = Astro.props;
   style={`background-color: ${color}`}>
   <div class="py-6 md:order-1 hidden md:block">
     <Picture
-      src={image}
+      src={imageSrc}
       alt="Astronaut in the air"
       width={520}
       height={424}
