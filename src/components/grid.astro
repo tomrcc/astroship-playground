@@ -8,6 +8,12 @@ const { title, cards } = Astro.props;
     {
       cards?.map((card) => {
         return (
+          <template>
+            <li data-editable="array-item">
+              <h3>{card.title}</h3>
+              <p>{card.content}</p>
+            </li>
+          </template>
           <li data-editable="array-item">
             <h3>{card.title}</h3>
             <p>{card.content}</p>
