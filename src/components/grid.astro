@@ -1,0 +1,26 @@
+---
+const { title, cards } = Astro.props;
+---
+
+<section>
+  <h2>{title}</h2>
+  <ul class="card-grid">
+    {
+      cards?.map((card) => {
+        return (
+          <li>
+            <h3>{card.title}</h3>
+            <p>{card.content}</p>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+</style>
