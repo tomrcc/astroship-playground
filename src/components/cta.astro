@@ -1,7 +1,7 @@
 ---
 import Link from "./ui/link.astro";
 
-const { background_color, title, text_color } = Astro.props;
+const { background_color, title, text_color, list_items } = Astro.props;
 ---
 
 <div
@@ -17,4 +17,16 @@ const { background_color, title, text_color } = Astro.props;
   <div class="flex mt-5">
     <Link href="#" style="inverted">Get Started</Link>
   </div>
+  <ul>
+    {
+      list_items?.map((item) => {
+        return (
+          <li>
+            <p>{item.title}</p>
+            <p>{item.desc}</p>
+          </li>
+        );
+      })
+    }
+  </ul>
 </div>

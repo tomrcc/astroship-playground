@@ -15,6 +15,11 @@ content_blocks:
     background_color: "#034ad8"
     title: This is CTA
     text_color: "#ff0000"
+    list_items:
+      - title: Item 1 
+        desc: A lil description
+      - title: Item 2 
+        desc: Another lil description
   - type: grid
     title: Hello card grid
     cards:
