@@ -4,11 +4,11 @@ const { title, cards } = Astro.props;
 
 <section class="profile-group">
   <h2>{title}</h2>
-  <ul class="profile-group__cards">
+  <ul class="profile-group__cards" data-editable="array" data-prop="cards">
     {
       cards?.map((card) => {
         return (
-          <li>
+          <li data-editable="array-item">
             <h3>{card.title}</h3>
             <p>{card.content}</p>
           </li>
