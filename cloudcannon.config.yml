@@ -15,6 +15,13 @@ collections_config:
       $.layout:
         hidden: true
         cascade: true
+      image:
+        type: image
+        comment: Images are optimized on build when entered here.
+        options:
+          paths:
+            static: ""
+            uploads: "src/assets"
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
