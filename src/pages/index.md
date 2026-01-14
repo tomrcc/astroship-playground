@@ -29,4 +29,13 @@ content_blocks:
         content: Wassssup2
       - title: Card 3
         content: Wassssup3
+  - type: grid2
+    title: Hello card grid2. This has no editable array nested.
+    cards:
+      - title: Card 1
+        content: Wassssup
+      - title: Card 2
+        content: Wassssup2
+      - title: Card 3
+        content: Wassssup3
 ---
