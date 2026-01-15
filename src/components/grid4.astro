@@ -1,27 +1,17 @@
 ---
+import Grid4Item from "./grid4Item.astro";
 const { title, cards } = Astro.props;
 ---
 
 <section class="profile-group">
   <h2>{title}</h2>
   <ul class="profile-group__cards" data-editable="array" data-prop="cards">
-    <template>
-      <li data-editable="array-item">
-        <h3 data-editable="text" data-prop="title"></h3>
-        <p data-editable="text" data-prop="content"></p>
-      </li>
-    </template>
     {
       cards?.map((card) => {
         return (
-          <li data-editable="array-item">
-            <h3 data-editable="text" data-prop="title">
-              {card.title}
-            </h3>
-            <p data-editable="text" data-prop="content">
-              {card.content}
-            </p>
-          </li>
+          <editable-array-item>
+            <Grid4Item {...card} />;
+          </editable-array-item>
         );
       })
     }

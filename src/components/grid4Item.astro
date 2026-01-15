@@ -1,0 +1,10 @@
+---
+const { title, content, background_color } = Astro.props;
+---
+
+<li style={`background-color: ${background_color};`}>
+  <h3>
+    {title}
+  </h3>
+  <p>{content}</p>
+</li>

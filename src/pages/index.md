@@ -25,10 +25,13 @@ content_blocks:
     cards:
       - title: Card 1
         content: Wassssup
+        background_color: "#ff0000"
       - title: Card 2
         content: Wassssup2
+        background_color: "#00ff00"
       - title: Card 3
         content: Wassssup3
+        background_color: "#0000ff"
   - type: grid2
     title: Hello card grid2. This has no editable array nested.
     cards:
@@ -47,4 +50,16 @@ content_blocks:
         content: Wassssup2
       - title: Card 3
         content: Wassssup3
+  - type: grid4
+    title: Hello card grid4. This has an editable array nested, with each array item being a registered component.
+    cards:
+      - title: Card 1
+        content: Wassssup
+        background_color: "#0000ff"
+      - title: Card 2
+        content: Wassssup2
+        background_color: "#0f0ff"
+      - title: Card 3
+        content: Wassssup3
+        background_color: "#0dd0ff"
 ---
