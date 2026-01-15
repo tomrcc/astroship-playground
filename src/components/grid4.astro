@@ -9,8 +9,8 @@ const { title, cards } = Astro.props;
     {
       cards?.map((card) => {
         return (
-          <editable-array-item>
-            <Grid4Item {...card} />;
+          <editable-array-item data-component="grid4item">
+            <Grid4Item {...card} />
           </editable-array-item>
         );
       })
