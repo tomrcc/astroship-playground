@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.2.0",
     "@astrojs/sitemap": "^3.2.1",
-    "@cloudcannon/editable-regions": "^0.0.6",
+    "@cloudcannon/editable-regions": "github:CloudCannon/editable-regions#fix/astro-modules",
     "@fontsource-variable/bricolage-grotesque": "^5.2.5",
     "@fontsource-variable/inter": "^5.2.5",
     "@iconify-json/bx": "^1.2.2",
