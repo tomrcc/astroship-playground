@@ -1,0 +1,68 @@
+---
+const { title, cards } = Astro.props;
+---
+
+<section class="profile-group">
+  <h2>{title}</h2>
+  <ul class="profile-group__cards">
+    {
+      cards?.map((card) => {
+        return (
+          <li>
+            <h3>{card.title}</h3>
+            <p>{card.content}</p>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
+
+<style>
+  .profile-group {
+    /* These variables control the grid layout.
+     */
+    --min-card-size: 18rem;
+    --maxColumns: 4; /* this is added by TomR */
+    --space-m: 2rem; /* this is added by TomR */
+    --card-gap: var(--space-m);
+
+    /* These variables control the profile card component layout.
+     * Set the size properties to auto so that we can responsively size them for
+     * different column counts.
+     */
+    --card-width: auto;
+    --card-height: auto;
+    --card-aspect-ratio: 24 / 30;
+
+    container: profile-group / inline-size;
+
+    & > * {
+      --flow-space: var(--space-m);
+    }
+  }
+
+  .profile-group__cards {
+    flex: 1 0 100%;
+    display: grid;
+    gap: var(--card-gap);
+
+    /* What this does: fit as many columns as possible, up to the specified maximum.
+     * If we can't fit the maximum column count due to lack of space, fall back to fewer columns,
+     * and grow the cards to use the space available.
+     */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(
+        max(
+          var(--min-card-size),
+          calc(
+            (100% - (var(--maxColumns) - 1) * var(--card-gap)) /
+              var(--maxColumns)
+          )
+        ),
+        1fr
+      )
+    );
+  }
+</style>

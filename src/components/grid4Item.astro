@@ -1,0 +1,10 @@
+---
+const { title, content, background_color } = Astro.props;
+---
+
+<li style={`background-color: ${background_color};`}>
+  <h3 data-editable="text" data-prop="title">
+    {title}
+  </h3>
+  <p data-editable="text" data-prop="content">{content}</p>
+</li>

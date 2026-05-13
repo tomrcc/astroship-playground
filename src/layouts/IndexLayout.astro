@@ -3,6 +3,11 @@ import Container from "@/components/container.astro";
 import Cta from "@/components/cta.astro";
 import Features from "@/components/features.astro";
 import Hero from "@/components/hero.astro";
+import Grid from "@/components/grid.astro";
+import Grid2 from "@/components/grid2.astro";
+import Grid3 from "@/components/grid3.astro";
+import Grid4 from "@/components/grid4.astro";
+import Grid4Item from "@/components/grid4Item.astro";
 import Logos from "@/components/logos.astro";
 import Layout from "@/layouts/Layout.astro";
 
@@ -10,23 +15,38 @@ const components = {
   hero: Hero,
   features: Features,
   logos: Logos,
-  cta: Cta
-}
-
+  cta: Cta,
+  grid: Grid,
+  grid2: Grid2,
+  grid3: Grid3,
+  grid4: Grid4,
+  grid4item: Grid4Item,
+};
 ---
 
 <Layout title="">
   <script>
-    if(window.inEditorMode){
+    if (window.inEditorMode) {
       import("@/utils/live-editing.js");
     }
   </script>
   <Container>
-    <editable-array data-prop="content_blocks" data-id-key="type" data-component-key="type">
-      {Astro.props.frontmatter.content_blocks.map((block) => {
-        const Component = components[block.type];
-        return <editable-array-item data-id={block.type} data-component={block.type}><Component {...block} /></editable-array-item>;
-      })}
+    <editable-array
+      data-prop="content_blocks"
+      data-id-key="type"
+      data-component-key="type">
+      {
+        Astro.props.frontmatter.content_blocks.map((block) => {
+          const Component = components[block.type];
+          return (
+            <editable-array-item
+              data-id={block.type}
+              data-component={block.type}>
+              <Component {...block} />
+            </editable-array-item>
+          );
+        })
+      }
     </editable-array>
   </Container>
 </Layout>
